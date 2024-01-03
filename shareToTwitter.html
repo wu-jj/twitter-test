@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Page</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@digitalocean" />
+    <meta name="twitter:title" content="Sammy the Shark" />
+    <meta name="twitter:description" content="Senior Selachimorpha at DigitalOcean" />
+    <meta name="twitter:image" content="https://html.sammy-codes.com/images/large-profile.jpg" />
+
+</head>
+<body>
+<h1>My Page</h1>
+<img src="404.jpg">
+<p>这是我的页面</p>
+<button onclick="shareOnTwitter()">分享tw</button>
+<button onclick="shareOnTwitter()">分享fb</button>
+</body>
+<script>
+    function shareOnTwitter() {
+        var text = "这是要分享的内容";
+        var url = "https://example.com";
+        var via = "您的 Twitter 用户名";
+        var hashtags = "要添加的标签";
+        var image = "https://example.com/image.jpg";
+        var intentUrl = "https://twitter.com/intent/tweet?text=" +
+            encodeURIComponent(text) + "&url=" + encodeURIComponent(url) + "&via="
+            + encodeURIComponent(via) + "&hashtags=" + encodeURIComponent(hashtags)
+
+        ;
+        window.open(intentUrl, "_blank", "width=550,height=420");
+    }
+
+    function shareOnFacebook() {
+
+    }
+
+/*
+    window.twttr = (function (d, s, id) { // 引入sdk
+        var t, js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+    try {
+        twttr.ready(function (twttr) {   // 注册事件
+            twttr.events.bind('tweet', function (event) {
+                // your callback action here...
+                console.log('callback')
+            });
+        });
+    } catch (err) {
+        new Error('twttr fail to load')
+    }
+    // 分享事件开始
+    $('.share_tweet').on('click', function() {
+        var text = '8%E6%9C%8817%E6%'  // 携带文本需要通过url转码,如果不是标准转码可能会导致分享内容乱码(像中文、日文这种文本)
+        $(this).parent().attr('target', '_blank');
+        $(this).parent().attr('href', 'https://twitter.com/share?text='+ text +'&url=https://www.xxx.jp');
+    })*/
+
+</script>
+</html>
